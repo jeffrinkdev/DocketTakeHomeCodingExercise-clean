@@ -1,0 +1,18 @@
+{
+  "name": "@docket-sample/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "lint": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@docket-sample/shared": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

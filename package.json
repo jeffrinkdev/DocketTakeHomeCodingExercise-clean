@@ -1,0 +1,38 @@
+{
+  "name": "docket-take-home-coding-exercise",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npm run build -w @docket-sample/shared",
+    "dev": "concurrently -n api,web -c green,cyan \"npm run dev -w @docket-sample/api\" \"npm run dev -w @docket-sample/web\"",
+    "build": "npm run build -w @docket-sample/shared && npm run build -w @docket-sample/api && npm run build -w @docket-sample/web",
+    "test": "npm run test -w @docket-sample/shared && npm run test -w @docket-sample/api && npm run test -w @docket-sample/web",
+    "lint": "npm run lint -w @docket-sample/shared && npm run lint -w @docket-sample/api && npm run lint -w @docket-sample/web"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
+    "jsdom": "^26.0.0",
+    "supertest": "^7.0.0",
+    "tailwindcss": "^4.1.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.8"
+  }
+}
